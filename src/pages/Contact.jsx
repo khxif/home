@@ -44,12 +44,14 @@ export default function Contact() {
   return (
     <>
       <Header />
-      <main className="py-6 max-w-7xl mx-auto">
-        <section className="flex md:flex-row space-x-32">
+      <main className="mx-auto max-w-7xl px-6 py-4 md:py-6 md:px-0">
+        <section className="flex flex-col justify-center md:space-x-32 md:flex-row md:justify-between">
           <div>
             <div>
-              <h1 className="text-3xl leading-10 font-bold">Contact Us</h1>
-              <p className="text-sm text-[#5D5F5F] py-2 md:w-[600px]">
+              <h1 className="text-2xl font-bold leading-10 md:text-3xl">
+                Contact Us
+              </h1>
+              <p className="py-2 text-sm text-[#5D5F5F] md:w-[600px]">
                 We love to hear from you, so if there’s anything you’d like to
                 ask us, we’re right here and ready to help in every way we can.
               </p>
@@ -57,14 +59,14 @@ export default function Contact() {
             {/* FORM */}
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="flex flex-col py-4 space-y-4"
+              className="flex flex-col items-center space-y-4 py-4"
             >
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6">
+              <div className="grid grid-cols-1 gap-x-4 sm:gap-x-6 gap-y-4 md:grid-cols-2">
                 <div className="flex flex-col">
                   <span className="flex items-center justify-between">
                     <label className="label">Your Name</label>
                     {errors.name && (
-                      <label className="text-red-600 label text-sm">
+                      <label className="label text-xs text-red-600 md:text-sm">
                         {errors?.name?.message}
                       </label>
                     )}
@@ -74,14 +76,15 @@ export default function Contact() {
                     placeholder="ex: Julie Sample "
                     {...register("name")}
                     disabled={isSubmitting}
-                    className="input-md rounded-full border border-gray-400 disabled:input-disabled"
+                    className="input-sm py-4 sm:py-6 rounded-full border border-gray-400 disabled:input-disabled 
+                   sm:input-md"
                   />
                 </div>
                 <div className="flex flex-col">
                   <span className="flex items-center justify-between">
                     <label className="label">Your Email</label>
                     {errors?.email && (
-                      <label className="text-red-600 label text-sm">
+                      <label className="label text-xs text-red-600 md:text-sm">
                         {errors?.email?.message}
                       </label>
                     )}
@@ -91,14 +94,14 @@ export default function Contact() {
                     placeholder="ex: julie@gmail.com"
                     {...register("email")}
                     disabled={isSubmitting}
-                    className="input-md rounded-full border border-gray-400"
+                    className="input-sm py-4 sm:py-6 rounded-full border border-gray-400 sm:input-md"
                   />
                 </div>
                 <div className="flex flex-col">
                   <span className="flex items-center justify-between">
                     <label className="label">Your Phone</label>
                     {errors?.phone && (
-                      <label className="text-red-600 label text-sm">
+                      <label className="label text-sm text-red-600">
                         {errors?.phone?.message}
                       </label>
                     )}
@@ -108,14 +111,14 @@ export default function Contact() {
                     {...register("phone")}
                     placeholder="ex: +1 234 455 5564"
                     disabled={isSubmitting}
-                    className="input-md rounded-full border border-gray-400"
+                    className="input-sm py-4 sm:py-6 rounded-full border border-gray-400 sm:input-md"
                   />
                 </div>
                 <div className="flex flex-col">
                   <span className="flex items-center justify-between">
                     <label className="label">Subject</label>
                     {errors?.subject && (
-                      <label className="text-red-600 label text-sm">
+                      <label className="label text-xs text-red-600 md:text-sm">
                         {errors?.subject?.message}
                       </label>
                     )}
@@ -125,21 +128,21 @@ export default function Contact() {
                     placeholder="ex: return"
                     {...register("subject")}
                     disabled={isSubmitting}
-                    className="input-md rounded-full border border-gray-400"
+                    className="input-sm py-4 sm:py-6 rounded-full border border-gray-400 sm:input-md"
                   />
                 </div>
-                <div className="row-span-2 col-span-2 w-full">
+                <div className="col-span-2 row-span-2 w-full">
                   <span className="flex items-center justify-between">
                     <label className="label">Message</label>
                     {errors?.message && (
-                      <label className="text-red-600 label text-sm">
+                      <label className="label text-xs text-red-600 md:text-sm">
                         {errors?.message?.message}
                       </label>
                     )}
                   </span>
                   <textarea
-                    className="textarea textarea-bordered focus:outline-black 
-                focus:ring-offset-0 focus:border-0 w-full text-base"
+                    className="textarea textarea-bordered w-full 
+                text-base focus:border-0 focus:outline-black focus:ring-offset-0"
                     placeholder="Write your message here."
                     {...register("message")}
                     disabled={isSubmitting}
@@ -149,7 +152,7 @@ export default function Contact() {
               </div>
               <button
                 disabled={isSubmitting}
-                className="ml-auto btn-wide btn-circle disabled:btn-disabled text-white bg-black 
+                className="btn-circle btn-wide ml-auto bg-black text-white disabled:btn-disabled 
                 hover:opacity-75 disabled:opacity-50"
               >
                 Submit
@@ -157,12 +160,12 @@ export default function Contact() {
             </form>
           </div>
 
-          <div className="py-10 md:mt-4 md:space-y-3">
-            <h2 className="font-bold text-sm">WORKING HOURS</h2>
+          <div className="mx-auto w-full py-10 md:mt-4 md:space-y-3">
+            <h2 className="text-sm font-bold">WORKING HOURS</h2>
             <p className="text-sm font-normal text-[#5D5F5F]">
               Monday – Friday, 9:00am – 5:00pm PST.
             </p>
-            <div className="py-3 space-y-4">
+            <div className="space-y-4 py-3">
               <span className="flex items-center space-x-1">
                 <img src={HomeIcon} />
                 <p className="text-sm font-normal text-[#5D5F5F]">
@@ -182,12 +185,12 @@ export default function Contact() {
                 </p>
               </span>
             </div>
-            <h2 className="font-bold text-sm">JOIN US</h2>
+            <h2 className="text-sm font-bold">JOIN US</h2>
             <p className="text-sm font-normal text-[#5D5F5F]">
               We are happily open new colloboration. You can ask any questions
               and offer problems by phone, email, Instagram or Facebook.
             </p>
-            <span className="flex space-x-3 w-full py-2">
+            <span className="flex w-full space-x-3 py-2">
               <img src={FacebookIcon} />
               <img src={GoogleIcon} />
               <img src={InstagramIcon} />

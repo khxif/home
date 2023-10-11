@@ -12,18 +12,18 @@ export default function About() {
   return (
     <>
       <Header />
-      <main className="max-w-7xl px-4 md:px-0 mx-auto py2 md:py-4">
+      <main className="py2 mx-auto max-w-7xl px-4 md:px-0 md:py-4">
         <section className="flex flex-col-reverse md:flex-row md:space-x-20">
           <div className="my-8 md:my-0">
             <img src={AboutImage1} alt="Image" />
           </div>
 
-          <div className="md:py-8 text-center md:text-start">
-            <h4 className="text-[#E9672B] text-base">ABOUT US</h4>
-            <h1 className="font-bold text-3xl leading-10 md:w-96 my-1">
+          <div className="text-center md:py-8 md:text-start">
+            <h4 className="text-base text-[#E9672B]">ABOUT US</h4>
+            <h1 className="my-1 text-2xl md:text-3xl font-bold leading-10 md:w-96">
               Just Stay Home & Enjoy Your Shopping Time
             </h1>
-            <div className="text-sm space-y-4 my-3 md:w-[570px]">
+            <div className="my-3 space-y-4 text-sm md:w-[570px]">
               <p>
                 The Expression Agenda is our global human rights strategy.
                 Through it, we target the best means of protecting rights and
@@ -38,7 +38,7 @@ export default function About() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 space-y-5 justify-between py-3">
+            <div className="grid grid-cols-2 justify-between space-y-5 md:py-3">
               <span className="flex items-center space-x-2">
                 <img src={AirplaneOutlined} />
                 <span>
@@ -79,11 +79,11 @@ export default function About() {
           </div>
         </section>
 
-        <section className="flex flex-col items-center justify-center max-w-7xl mx-auto space-y-3 py-4 md:w-[478px]">
-          <h1 className="font-bold text-3xl leading-10 text-center">
+        <section className="mx-auto flex max-w-7xl flex-col items-center justify-center space-y-3 py-4 md:w-[478px]">
+          <h1 className="text-center text-2xl md:text-3xl font-bold leading-10">
             Makes Everything So Much Eastier It’s Even More With Melor
           </h1>
-          <p className="text-sm md:w-[570px] text-center text-[#5D5F5F]">
+          <p className="text-center text-sm text-[#5D5F5F] md:w-[570px]">
             We believe that when we take care of our home, it takes care of us.
             That’s why we make premium quality sheets, towels, robes, rugs and
             all things soft and wonderful.
@@ -100,8 +100,8 @@ export default function About() {
         </section>
 
         <section
-          className="text-[#5D5F5F] space-y-5 py-6 mx-auto text-sm font-normal md:w-[930px]
-         flex flex-col justify-center items-center text-center"
+          className="mx-auto flex flex-col items-center justify-center space-y-5 py-6
+         text-center text-sm font-normal text-[#5D5F5F] md:w-[930px]"
         >
           <p>
             Sed vulputate elit vitae magna lacinia, vel bibendum neque faucibus.
@@ -124,14 +124,12 @@ export default function About() {
           </p>
         </section>
 
-        <section className="grid px-4 grid-cols-3 sm:grid-cols-4 md:grid-cols-7 py-8 md:space-x-4">
-          {
-            logos.map((src) => (
-              <div key={src.id}>
-                <img src={src.src} alt="logos" />
-              </div>
-            ))
-          }
+        <section className="scrollbar-hide flex items-center overflow-y-scroll py-8 md:space-x-4">
+          {logos.map((src) => (
+            <div key={src.id}>
+              <img src={src.src} alt="logos" />
+            </div>
+          ))}
         </section>
       </main>
     </>

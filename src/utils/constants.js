@@ -84,3 +84,48 @@ export const logos = [
     src: "/Aijsha.png",
   },
 ];
+
+export const productCategories = [
+  "All",
+  "Livingroom",
+  "Kitchen",
+  "Bedroom",
+  "Bathroom",
+  "office",
+];
+
+export const categories = [
+  "Livingroom",
+  "Kitchen",
+  "Bedroom",
+  "Bathroom",
+  "office",
+];
+
+export const productTypes = [
+  'Accessories',
+  'Appliances',
+  'Beds',
+  'Bookcases',
+  'Accessories',
+  'Cabinets',
+  'Cabinets',
+  'Curtains',
+  'Cabinets',
+  'Chairs',
+  'Amchairs',
+  'Chairs',
+  'Accessories',
+  'Appliances',
+  'Beds',
+  'Bookcases',
+  'Accessories',
+  'Cabinets',
+  'Cabinets',
+  'Curtains',
+  'Cabinets',
+  'Chairs',
+  'Amchairs',
+  'Chairs',
+  'Amchairs',
+]

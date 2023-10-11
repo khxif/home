@@ -2,11 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+html,body{
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
+@layer components {
   .shop-hero {
     background-image: url("/ShopHero.png");
-    @apply object-contain bg-no-repeat bg-cover bg-center h-[390px];
+    @apply h-[390px] bg-cover bg-center bg-no-repeat object-contain;
   }
-
+  .white-btn {
+    @apply btn rounded-full bg-white px-10 text-xs font-normal text-[#DA3E31];
+  }
+  .orange-btn {
+    @apply btn btn-wide mt-10 rounded-full border-0 bg-[#E9672B] text-white 
+    transition-all duration-200 ease-in-out hover:bg-[#E9672B] hover:brightness-90
+  }
+  .livingroom-bg {
+    background-image: url('/livingroombg.png');
+    @apply w-full h-full object-center bg-no-repeat
+  }
 }
