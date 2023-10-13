@@ -58,7 +58,7 @@ export default function SidebarContent() {
       <div className="flex flex-col items-start space-y-2">
         {routes.map((route) => (
           <Link
-            href={route.href}
+            to={route.href}
             className={twJoin(
               "w-full rounded-xl p-4 font-semibold shadow-sm hover:bg-gray-200",
               pathname === route.href && "bg-gray-200",
