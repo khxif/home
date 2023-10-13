@@ -36,7 +36,7 @@ export default function SidebarContent() {
                 <UserButton afterSignOutUrl="/" />
               ) : (
                 <Link
-                  to="/sign-in"
+                  to="/sign-up"
                   className="tooltip tooltip-bottom hover:tooltip-open"
                   data-tip="Sign in"
                 >

@@ -32,7 +32,7 @@ export default function NavItems() {
       {isSignedIn ? (
         <UserButton afterSignOutUrl="/sign-in" />
       ) : (
-        <Link to="/sign-in" className="flex items-center space-x-2">
+        <Link to="/sign-up" className="flex items-center space-x-2">
           <User />
           <p>Sign In</p>
         </Link>
