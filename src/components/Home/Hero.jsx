@@ -2,7 +2,7 @@ import Slider from "./Slider";
 
 export default function Hero() {
   return (
-    <section className="w-full grid-cols-3 gap-4 space-y-4 pb-4 md:grid md:space-y-0">
+    <section className="w-full grid-cols-3 gap-4 space-y-4 pb-4 md:grid md:space-y-0 relative -z-50">
       <div className="col-span-3 row-span-2 h-[553px]">
         <Slider />
       </div>

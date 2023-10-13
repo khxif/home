@@ -1,3 +1,4 @@
+import Sidebar from '../Sidebar/Sidebar'
 import NavItems from "./NavItems";
 import NavLinks from "./NavLinks";
 import Logo from "/logo.png";
@@ -11,6 +12,9 @@ export default function Header() {
         </div>
         <NavLinks />
         <NavItems />
+        <div className="md:hidden">
+          <Sidebar />
+        </div>
       </div>
     </header>
   );
