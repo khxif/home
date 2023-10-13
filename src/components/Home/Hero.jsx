@@ -2,7 +2,7 @@ import Slider from "./Slider";
 
 export default function Hero() {
   return (
-    <section className="w-full grid-cols-3 gap-4 space-y-4 pb-4 md:grid md:space-y-0 relative -z-50">
+    <section className="w-full grid-cols-3 gap-4 space-y-4 pb-4 md:grid md:space-y-0 ">
       <div className="col-span-3 row-span-2 h-[553px]">
         <Slider />
       </div>
@@ -28,7 +28,9 @@ export default function Hero() {
             <h1 className="text-xl font-bold">$39.99</h1>
           </div>
         </div>
-        <button className="white-btn mt-auto justify-end px-6 md:px-10 py-2">Shop Now</button>
+        <button className="white-btn mt-auto justify-end px-6 py-2 md:px-10">
+          Shop Now
+        </button>
       </div>
       <div className=" bg-[#F4F4F5]">3</div>
       <div className=" flex h-full w-full flex-col items-center justify-center bg-[#CDD454] p-4 text-center">

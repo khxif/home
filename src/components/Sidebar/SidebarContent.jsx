@@ -21,7 +21,7 @@ export default function SidebarContent() {
               className="tooltip tooltip-bottom hover:tooltip-open"
               data-tip="Favorites"
             >
-              <Heart className="w-5 h-5" />
+              <Heart className="h-5 w-5" />
             </Link>
 
             <Link
@@ -29,7 +29,7 @@ export default function SidebarContent() {
               className="tooltip tooltip-bottom flex items-center space-x-2 hover:tooltip-open"
               data-tip="Cart"
             >
-              <ShoppingCart className="w-5 h-5"/>
+              <ShoppingCart className="h-5 w-5" />
             </Link>
             <div>
               {isSignedIn ? (
@@ -40,7 +40,7 @@ export default function SidebarContent() {
                   className="tooltip tooltip-bottom hover:tooltip-open"
                   data-tip="Sign in"
                 >
-                  <User className="w-5 h-5"/>
+                  <User className="h-5 w-5" />
                 </Link>
               )}
             </div>

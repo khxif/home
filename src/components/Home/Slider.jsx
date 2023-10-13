@@ -5,9 +5,12 @@ export default function Slider() {
     <div className="carousel h-full w-full">
       <div
         id="slide1"
-        className="carousel-item relative h-[553px] w-full overflow-hidden"
+        className="carousel-item relative h-[553px] w-full overflow-hidden "
       >
-        <div className="flex w-full flex-col items-center justify-center space-y-3 bg-[#103D37] px-4 py-10 text-center">
+        <div
+          className="flex w-full flex-col items-center justify-center space-y-3 bg-[#103D37] px-4
+         py-10 text-center"
+        >
           <p className="text-sm font-medium uppercase text-[#CDD454]">
             Make real with wood
           </p>
@@ -176,23 +179,23 @@ export default function Slider() {
             <h3 className="text-lg uppercase text-[#EF8C5F] md:text-xl">
               2020’s NEW COLLECTION
             </h3>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#DE5212] md:text-4xl ">
+            <h1 className="text-2xl font-bold text-[#DE5212] sm:text-3xl md:text-4xl ">
               Long Neck Table Lamp
             </h1>
             <span className="flex items-center justify-center space-x-5 py-0 md:py-4">
               <h1 className="text-3xl font-bold leading-[64px] sm:text-5xl md:text-6xl">
                 $19.99
               </h1>
-              <h1 className="text-center text-2xl sm:text-3xl font-light leading-[44px] text-[#B6B8B8] md:text-4xl">
+              <h1 className="text-center text-2xl font-light leading-[44px] text-[#B6B8B8] sm:text-3xl md:text-4xl">
                 $54.20
               </h1>
             </span>
-            <p className="px-2 md:w-[373px] text-base sm:text-lg font-light leading-8 text-[#EF8C5F] md:text-xl">
+            <p className="px-2 text-base font-light leading-8 text-[#EF8C5F] sm:text-lg md:w-[373px] md:text-xl">
               A midcentury modern statement piece with a tailored profile
             </p>
             <button
-              className="btn-circle btn-wide mx-auto bg-[#103D37] text-white
-                hover:opacity-75 md:mt-8 z-10"
+              className="btn-circle btn-wide z-10 mx-auto bg-[#103D37]
+                text-white hover:opacity-75 md:mt-8"
             >
               Explore Now
             </button>
@@ -210,8 +213,8 @@ export default function Slider() {
            md:-top-14 md:h-[537px] md:w-[537px]"
           >
             <div
-              className="relative flex h-20 w-20 items-center justify-center rounded-full bg-[#DA3E31] text-2xl
-               font-bold text-white top-10 sm:text-3xl md:left-4 md:top-96 md:h-40 md:w-40 md:text-4xl"
+              className="relative top-10 flex h-20 w-20 items-center justify-center rounded-full bg-[#DA3E31]
+               text-2xl font-bold text-white sm:text-3xl md:left-4 md:top-96 md:h-40 md:w-40 md:text-4xl"
             >
               -30%
             </div>

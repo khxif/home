@@ -9,7 +9,7 @@ export default function Sidebar() {
         {/* Page content here */}
         <label
           htmlFor="my-drawer-4"
-          className="btn p-2 drawer-button cursor-pointer  bg-transparent hover:bg-transparent"
+          className="btn drawer-button cursor-pointer bg-transparent  p-2 hover:bg-transparent"
         >
           <Menu className="h-8 w-8" />
         </label>
@@ -20,7 +20,7 @@ export default function Sidebar() {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="menu h-screen w-4/5 bg-base-200 p-4 text-base-content">
+        <div className="menu absolute z-50 h-full w-4/5 bg-base-200 p-4 text-base-content">
           {/* Sidebar content here */}
           <SidebarContent />
         </div>
