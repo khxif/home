@@ -3,7 +3,7 @@ import SidebarContent from "./SidebarContent";
 
 export default function Sidebar() {
   return (
-    <div className="drawer drawer-end ml-4">
+    <div className="drawer drawer-end ml-4 relative z-50">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content">
         {/* Page content here */}

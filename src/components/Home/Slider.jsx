@@ -132,7 +132,7 @@ export default function Slider() {
               </Link>
             </div>
 
-            <p className="z-50 py-2 text-base font-medium uppercase text-[#CDD454] md:text-lg">
+            <p className="z-30 py-2 text-base font-medium uppercase text-[#CDD454] md:text-lg">
               Select Zwilling Cutlery
             </p>
 
@@ -173,7 +173,7 @@ export default function Slider() {
         <div className="relative flex w-full items-center justify-center bg-[#fff5eb] ">
           <img
             src="/lamp3.png"
-            className="absolute bottom-0 left-10 z-50 w-24 md:left-32 md:w-auto"
+            className="absolute bottom-0 left-10 z-30 w-24 md:left-32 md:w-auto"
           />
           <div className="flex flex-col items-center justify-center space-y-3 text-center">
             <h3 className="text-lg uppercase text-[#EF8C5F] md:text-xl">
@@ -202,7 +202,7 @@ export default function Slider() {
           </div>
           <img
             src="/lamp4.png"
-            className="absolute right-4 top-2 z-50 w-24 md:bottom-0 md:right-28 md:w-auto"
+            className="absolute right-4 top-2 z-30 w-24 md:bottom-0 md:right-28 md:w-auto"
           />
           <div
             className="absolute -bottom-8 -left-8 flex h-52 w-52 rounded-full bg-[#E9672B66] md:-bottom-16 
