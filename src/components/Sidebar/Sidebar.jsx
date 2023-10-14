@@ -20,7 +20,7 @@ export default function Sidebar() {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <div className="menu absolute z-50 h-full w-4/5 bg-base-200 p-4 text-base-content">
+        <div className="menu absolute z-50 overflow-hidden h-screen  w-4/5 bg-base-200 p-4 text-base-content">
           {/* Sidebar content here */}
           <SidebarContent />
         </div>

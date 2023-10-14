@@ -118,7 +118,7 @@ export default function Home() {
               alt="product"
               className="absolute -left-14 w-48 object-contain sm:-left-6 md:w-96 md:static"
             />
-            <div className="z-50 mx-auto">
+            <div className="z-30 mx-auto">
               <h4 className="text-sm uppercase text-[#E9672B] md:text-base">
                 2020’s NEW COLLECTION
               </h4>
@@ -145,7 +145,7 @@ export default function Home() {
               alt="product"
               className="absolute -left-14 w-48 object-contain sm:-left-6 md:w-96 md:static"
             />
-            <div className="z-50 mx-auto">
+            <div className="z-30 mx-auto">
               <h4 className="text-sm uppercase text-[#E9672B] md:text-base">
                 2020’s NEW COLLECTION
               </h4>
