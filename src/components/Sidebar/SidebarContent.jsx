@@ -3,18 +3,29 @@ import { routes } from "../../utils/constants";
 import { Link, useLocation } from "react-router-dom";
 import { twJoin } from "tailwind-merge";
 import { UserButton, useUser } from "@clerk/clerk-react";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export default function SidebarContent() {
   const location = useLocation();
   const pathname = location.pathname;
 
   const { isSignedIn } = useUser();
+  const [input, setInput] = useState("");
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    if (!isSignedIn) toast.error("Sign In or Sign Up to continue!!");
+    setInput("");
+  };
 
   return (
     <div className="flex w-full  flex-col justify-center space-y-8 py-4">
       <div className="flex flex-col  gap-4">
         <div className="flex items-center justify-between px-2">
-          <img src="/logo.png" alt="logo" className="w-20" />
+          <Link to='/'>
+            <img src="/logo.png" alt="logo" className="w-20" />
+          </Link>
           <div className="flex items-center space-x-4">
             <Link
               to="/favorites"
@@ -46,13 +57,18 @@ export default function SidebarContent() {
             </div>
           </div>
         </div>
-        <form className="flex items-center justify-between rounded-full bg-white px-4 py-2 shadow-sm">
+        <form
+          onSubmit={handleSearch}
+          className="flex items-center justify-between rounded-full bg-white px-4 py-2 shadow-sm"
+        >
           <input
             type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
             placeholder="Search for products..."
-            className="w-full  bg-transparent px-2 outline-none hover:outline-none"
+            className="w-full bg-transparent px-2 outline-none hover:outline-none"
           />
-          <Search />
+          <Search className="h-5 w-5 cursor-pointer" onClick={handleSearch} />
         </form>
       </div>
       <div className="flex flex-col items-start space-y-2">

@@ -6,7 +6,7 @@ export default function NavItems() {
   const { isSignedIn } = useUser();
 
   return (
-    <div className="hidden space-x-8 md:flex">
+    <div className="hidden items-center space-x-8 md:flex">
       <Link
         to="/favorites"
         className="tooltip tooltip-bottom hover:tooltip-open"

@@ -23,4 +23,8 @@ html,body{
     background-image: url('/livingroombg.png');
     @apply w-full h-full object-center bg-no-repeat
   }
+
+  .slider::-webkit-slider-thumb{
+    background: orange;
+  }
 }

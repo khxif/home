@@ -32,6 +32,7 @@ export default function Hero() {
           Shop Now
         </button>
       </div>
+      
       <div className=" bg-[#F4F4F5]">3</div>
       <div className=" flex h-full w-full flex-col items-center justify-center bg-[#CDD454] p-4 text-center">
         <h1 className="mt-3 flex w-52 flex-col space-y-2 text-2xl font-medium">
