@@ -22,8 +22,8 @@ export default function Shop() {
       <Header />
       <main className="h-full">
         <ShopHero />
-        <section className="mx-auto flex h-full max-w-7xl space-x-20 py-6">
-          <section className="flex max-w-xs  flex-col px-2 py-4">
+        <section className="mx-auto flex h-full max-w-7xl px-4 py-6 md:space-x-20 md:px-0">
+          <section className=" hidden  max-w-xs flex-col px-2 py-4 md:flex">
             <div className=" py-2">
               <h1 className="text-xl">Filter</h1>
             </div>
