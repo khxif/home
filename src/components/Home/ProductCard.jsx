@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import ColorSelector from "./ColorSelector";
 
 export default function ProductCard() {
@@ -13,7 +14,7 @@ export default function ProductCard() {
       <img
         src="/clock.png"
         alt="product-image"
-        className="h-28 object-contain md:h-48"
+        className="h-28 object-contain bg-white md:h-48"
       />
       <div className="card-body my-0 space-y-2 px-2 py-0 text-center md:py-2">
         <div>
@@ -21,9 +22,11 @@ export default function ProductCard() {
         </div>
         <p className="text-base text-[#5D5F5F]">Bucklo Wrop Wooden Table</p>
         <h4 className="text-base font-bold">$69.36</h4>
+        <Link to='/product/123'>
         <button className="btn px-2 md:px-4 border-0 bg-transparent text-[#E9672B] outline-none">
           Add to Cart
         </button>
+        </Link>
       </div>
     </div>
   );

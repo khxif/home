@@ -10,6 +10,7 @@ import Favorites from "../../pages/Favorites";
 import Cart from "../../pages/Cart";
 import Faq from "../../pages/Faq";
 import NotFound from "../../pages/NotFound";
+import Product from "../../pages/Product";
 
 if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");
@@ -33,6 +34,7 @@ export function ClerkProviderWithRoutes() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route
           path="/sign-in/*"
           element={

@@ -1,12 +1,13 @@
 import Select from "react-select";
 import Header from "../components/Header/Header";
 import ShopHero from "../components/Shop/ShopHero";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import ProductsGrid from "../components/Shop/ProductsGrid";
 import Collapsible from "react-collapsible";
 import ColorSelector from "../components/Home/ColorSelector";
 import ReactPaginate from "react-paginate";
+import { X } from "lucide-react";
 
 const options = [
   { value: "low to high", label: "Price(low to high)" },
@@ -15,7 +16,24 @@ const options = [
 
 export default function Shop() {
   const [selectedOption, setSelectedOption] = useState(null);
-  const [category, setCategory] = useState("");
+  const [categoriesCheckedBox, setCategoriesCheckBox] = useState("");
+  const [typesCheckedBox, setTypesCheckBox] = useState("");
+  const [filters, setFilters] = useState([]);
+
+  const handleCategoriesCheckBox = (checkBoxName) => {
+    if (categoriesCheckedBox === checkBoxName) setCategoriesCheckBox("");
+    else setCategoriesCheckBox(checkBoxName);
+  };
+
+  const handleTypesCheckBox = (checkBoxName) => {
+    if (typesCheckedBox === checkBoxName) setTypesCheckBox("");
+    else setTypesCheckBox(checkBoxName);
+  };
+
+  useEffect(() => {
+    setFilters([categoriesCheckedBox, typesCheckedBox]);
+    console.log(filters);
+  }, [categoriesCheckedBox, typesCheckedBox]);
 
   return (
     <>
@@ -26,6 +44,14 @@ export default function Shop() {
           <section className=" hidden  max-w-xs flex-col px-2 py-4 md:flex">
             <div className=" py-2">
               <h1 className="text-xl">Filter</h1>
+              <div className="mr-auto flex items-center space-x-4 py-4">
+                {filters?.map((filter) => (
+                  <p className="flex cursor-pointer space-x-4" key={filter}>
+                    <X className={` ${filter === "" && "hidden"}`} />
+                    {filter}
+                  </p>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-col items-start space-y-8 py-2">
@@ -38,14 +64,13 @@ export default function Shop() {
                   <span className="flex w-40 cursor-pointer items-center space-x-2">
                     <input
                       type="checkbox"
-                      value={category}
-                      onClick={() => setCategory(category ? "" : "acessories")}
+                      checked={categoriesCheckedBox === "Accessories"}
+                      onChange={() => handleCategoriesCheckBox("Accessories")}
                       className="checkbox-warning checkbox checkbox-sm rounded-md"
                     />
                     <label
                       className={twMerge(
                         "cursor-pointer text-base font-medium text-[#5D5F5F]",
-                        category && "text-orange-400",
                       )}
                     >
                       Accessories
@@ -55,17 +80,16 @@ export default function Shop() {
                   <span className="flex w-40 cursor-pointer items-center space-x-2">
                     <input
                       type="checkbox"
-                      value={category}
-                      onClick={() => setCategory(category ? "" : "books")}
+                      checked={categoriesCheckedBox === "Gadgets"}
+                      onChange={() => handleCategoriesCheckBox("Gadgets")}
                       className="checkbox-warning checkbox checkbox-sm rounded-md"
                     />
                     <label
                       className={twMerge(
                         "cursor-pointer text-base font-medium text-[#5D5F5F]",
-                        category && "text-orange-400",
                       )}
                     >
-                      Accessories
+                      Gadgets
                     </label>
                   </span>
                 </div>
@@ -80,34 +104,32 @@ export default function Shop() {
                   <span className="space-x- flex w-40 cursor-pointer items-center">
                     <input
                       type="checkbox"
-                      value={category}
-                      onClick={() => setCategory(category ? "" : "acessories")}
+                      checked={typesCheckedBox === "Wooden"}
+                      onChange={() => handleTypesCheckBox("Wooden")}
                       className="checkbox-warning checkbox checkbox-sm rounded-md"
                     />
                     <label
                       className={twMerge(
                         "cursor-pointer text-base font-medium text-[#5D5F5F]",
-                        category && "text-orange-400",
                       )}
                     >
-                      Accessories
+                      Wooden
                     </label>
                   </span>
 
-                  <span className="flex w-40 cursor-pointer items-center space-x-2">
+                  <span className="space-x- flex w-40 cursor-pointer items-center">
                     <input
                       type="checkbox"
-                      value={category}
-                      onClick={() => setCategory(category ? "" : "books")}
+                      checked={typesCheckedBox === "Iron"}
+                      onChange={() => handleTypesCheckBox("Iron")}
                       className="checkbox-warning checkbox checkbox-sm rounded-md"
                     />
                     <label
                       className={twMerge(
                         "cursor-pointer text-base font-medium text-[#5D5F5F]",
-                        category && "text-orange-400",
                       )}
                     >
-                      Accessories
+                      Iron
                     </label>
                   </span>
                 </div>
@@ -168,7 +190,7 @@ export default function Shop() {
           <section className="w-full flex-1 px-2 py-4">
             <div className="flex w-full items-center space-x-5">
               <Select
-                className="w-1/4"
+                className="w-max md:w-1/4"
                 placeholder="Show"
                 options={[...Array(20)].map((_, i) => ({
                   label: (i + 1).toString(),
@@ -179,7 +201,7 @@ export default function Shop() {
               />
 
               <Select
-                className="w-1/4"
+                className="w-max md:w-1/4"
                 placeholder="Sort by"
                 options={options}
                 onChange={setSelectedOption}
@@ -198,8 +220,8 @@ export default function Shop() {
                 activeClassName="px-4 py-2 font-medium bg-black text-white rounded-md"
                 breakLabel="..."
                 nextLabel="Next"
-                pageRangeDisplayed={3}
-                pageCount={20}
+                pageRangeDisplayed={2}
+                pageCount={10}
                 previousLabel="Prev"
                 renderOnZeroPageCount={null}
               />
