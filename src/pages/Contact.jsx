@@ -59,9 +59,10 @@ export default function Contact() {
             {/* FORM */}
             <form
               onSubmit={handleSubmit(onSubmit)}
-              className="flex flex-col items-center space-y-4 py-4"
+              className="flex flex-col  space-y-4 py-4"
             >
               <div className="grid grid-cols-1 gap-x-4 sm:gap-x-6 gap-y-4 md:grid-cols-2">
+
                 <div className="flex flex-col">
                   <span className="flex items-center justify-between">
                     <label className="label">Your Name</label>

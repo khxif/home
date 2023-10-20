@@ -6,7 +6,7 @@ export default function ProductCard() {
   return (
     <div className="card relative transition-all duration-200 ease-in-out">
       {offer && (
-        <div className="absolute left-0 top-0 md:top-4 flex h-10 w-10 items-center justify-center rounded-full 
+        <div className="absolute left-2 top-0 md:top-4 flex h-10 w-10 items-center justify-center rounded-full 
         bg-[#CDD454] md:h-14 md:w-14">
           <h4 className="text-xs md:text-sm font-bold">-50%</h4>
         </div>
@@ -17,7 +17,7 @@ export default function ProductCard() {
         className="h-28 object-contain bg-white md:h-48"
       />
       <div className="card-body my-0 space-y-2 px-2 py-0 text-center md:py-2">
-        <div>
+        <div className="py-2">
           <ColorSelector />
         </div>
         <p className="text-base text-[#5D5F5F]">Bucklo Wrop Wooden Table</p>

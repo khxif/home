@@ -1,5 +1,7 @@
 import { useParams } from "react-router-dom";
 import Header from "../components/Header/Header";
+import Specifications from "../components/Products/Specifications";
+import Reviews from "../components/Products/Reviews";
 import ColorSelector from "../components/Home/ColorSelector";
 import ReactStars from "react-rating-stars-component";
 import BreadCrumbs from "../components/Products/BreadCrumbs";
@@ -8,6 +10,8 @@ import { twMerge } from "tailwind-merge";
 import TabButtons from "../components/Products/TabButtons";
 import Quantity from "../components/Products/Quantity";
 import { Heart } from "lucide-react";
+import Description from "../components/Products/Description";
+import RelatedProducts from "../components/Products/RelatedProducts";
 
 export default function Product() {
   const params = useParams();
@@ -24,6 +28,7 @@ export default function Product() {
 
   const [activeTab, setActiveTab] = useState("");
   const [quantity, setQuantity] = useState(1);
+  const [category, setCategory] = useState("Description");
 
   return (
     <>
@@ -92,7 +97,7 @@ export default function Product() {
             md:space-x-10 md:py-0"
           >
             <div>
-              <div className="md:w-96 space-y-2">
+              <div className="space-y-2 md:w-96">
                 <h1 className="text-2xl">Bucklo Wrop Wooden Chair</h1>
                 <ReactStars
                   count={5}
@@ -178,7 +183,52 @@ export default function Product() {
             </div>
           </div>
         </section>
+
+        <section className="flex flex-col space-x-4 py-4 md:flex-row md:py-8">
+          <div
+            className="flex flex-row justify-center space-x-6 border-b-[1px] md:w-52 md:flex-col md:justify-normal 
+         md:space-x-0 md:space-y-6 md:border-b-0 md:border-r-[1px]"
+          >
+            <span
+              onClick={() => setCategory("Description")}
+              className={twMerge(
+                "cursor-pointer pb-4 text-base text-[#5D5F5F] md:pb-0",
+                category === "Description" &&
+                  `border-b-2 border-b-orange-500 font-bold text-[#DE5212] md:border-b-0 md:border-r-2 md:border-r-orange-500`,
+              )}
+            >
+              Description
+            </span>
+            <span
+              onClick={() => setCategory("Specifications")}
+              className={twMerge(
+                "cursor-pointer pb-4 text-base text-[#5D5F5F] md:pb-0",
+                category === "Specifications" &&
+                  `border-b-2 border-b-orange-500 font-bold text-[#DE5212] md:border-b-0 md:border-r-2 md:border-r-orange-500`,
+              )}
+            >
+              Specifications
+            </span>
+            <span
+              onClick={() => setCategory("Reviews")}
+              className={twMerge(
+                "cursor-pointer pb-4 text-base text-[#5D5F5F] md:pb-0",
+                category === "Reviews" &&
+                  `border-b-2 border-b-orange-500 font-bold text-[#DE5212] md:border-b-0 md:border-r-2 md:border-r-orange-500`,
+              )}
+            >
+              Reviews
+            </span>
+          </div>
+
+          <div>
+            {category === "Description" && <Description />}
+            {category === "Specifications" && <Specifications />}
+            {category === "Reviews" && <Reviews />}
+          </div>
+        </section>
       </main>
+      <RelatedProducts />
     </>
   );
 }
