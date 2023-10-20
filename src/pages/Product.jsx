@@ -147,7 +147,7 @@ export default function Product() {
               </span>
 
               <div className="w-full space-y-4 py-4">
-                <div className="flex w-full items-center gap-x-5">
+                <div className="flex w-full items-center space-x-4">
                   <button className="orange-btn mt-0 w-[90%]">
                     Add to Cart
                   </button>
@@ -156,7 +156,7 @@ export default function Product() {
                   </button>
                 </div>
                 <button
-                  className="btn-circle btn-wide ml-auto w-full bg-black text-white 
+                  className="btn-circle  ml-auto w-full bg-black text-white 
                 hover:opacity-75 "
                 >
                   Buy It Now!

@@ -13,8 +13,8 @@ export default function Reviews() {
   };
   return (
     <div className="flex flex-col space-y-6 py-6 md:flex-row md:space-x-6 md:space-y-0">
-      <div className="flex w-full flex-col space-y-2 sm:space-y-6 px-4 md:px-10 ">
-        <h1 className="text-center md:text-left md:w-[338px] text-2xl sm:text-3xl font-bold leading-10">
+      <div className="flex w-full flex-col space-y-2 px-4 sm:space-y-6 md:px-10 ">
+        <h1 className="text-center text-2xl font-bold leading-10 sm:text-3xl md:w-[338px] md:text-left">
           What people says about this product
         </h1>
 
@@ -225,7 +225,7 @@ export default function Reviews() {
             />
           </div>
 
-          <button className="btn-circle w-full  mx-auto my-4 bg-black text-white hover:opacity-75">
+          <button className="btn-circle mx-auto  my-4 w-full bg-black text-white hover:opacity-75">
             Submit
           </button>
         </form>

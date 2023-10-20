@@ -14,7 +14,7 @@ export default function Specifications() {
         <h1 className='font-bold text-lg'>
          Key Features :
         </h1>
-        <p className='text-[#5D5F5F] w-3/4'>
+        <p className='text-[#5D5F5F] md:w-3/4'>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
           Numquam totam minus eos ullam cupiditate dicta
           perspiciatis? Impedit quasi debitis sit enim repellat dolorum! Corporis doloribus minima,
