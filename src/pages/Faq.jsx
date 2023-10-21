@@ -6,8 +6,8 @@ export default function Faq() {
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-7xl px-4 py-3 text-3xl md:px-0 md:py-6">
-        <h1 className="font-bold">How Can We Help You?</h1>
+      <main className="mx-auto max-w-7xl px-4 py-2 text-3xl md:px-0 md:py-6">
+        <h1 className="font-bold ">How Can We Help You?</h1>
         <p className="my-4 text-sm text-[#5D5F5F]">
           Below are answers to our most commonly asked questions. If you cannot
           find an answer here, please contact us.
@@ -21,7 +21,7 @@ export default function Faq() {
             >
               <div className="collapse-title flex items-center space-x-6 bg-base-200 font-semibold">
                 <span className="text-xs">Question</span>
-                <span className="text-sm">{faq?.question}</span>
+                <span className="text-xs sm:text-sm">{faq?.question}</span>
               </div>
               <div className="collapse-content">
                 <p className="p-4 text-sm leading-6">{faq?.answer}</p>

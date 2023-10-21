@@ -23,7 +23,7 @@ export default function SidebarContent() {
     <div className="flex w-full  flex-col justify-center space-y-8 py-4">
       <div className="flex flex-col  gap-4">
         <div className="flex items-center justify-between px-2">
-          <Link to='/'>
+          <Link to="/">
             <img src="/logo.png" alt="logo" className="w-20" />
           </Link>
           <div className="flex items-center space-x-4">
@@ -78,6 +78,7 @@ export default function SidebarContent() {
             className={twJoin(
               "w-full rounded-xl p-4 font-semibold shadow-sm hover:bg-gray-200",
               pathname === route.href && "bg-gray-200",
+              route.color && route.color,
             )}
             key={route.href}
           >

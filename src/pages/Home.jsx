@@ -90,7 +90,7 @@ export default function Home() {
               progress
             </div>
           </div>
-          <div className="flex-1">
+          <div className="md:flex-1">
             <h1 className="pb-4 text-center text-2xl font-bold md:text-3xl">
               Latest Products
             </h1>

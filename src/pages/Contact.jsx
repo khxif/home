@@ -11,6 +11,7 @@ import GoogleIcon from "/GoogleIcon.svg";
 import InstagramIcon from "/InstagramIcon.svg";
 import YoutubeIcon from "/YoutubeIcon.svg";
 import { toast } from "sonner";
+import MapView from "../components/Contact/MapView";
 
 export default function Contact() {
   const formSchema = z.object({
@@ -199,6 +200,10 @@ export default function Contact() {
               <img src={YoutubeIcon} />
             </span>
           </div>
+        </section>
+
+        <section>
+          <MapView />
         </section>
       </main>
     </>
