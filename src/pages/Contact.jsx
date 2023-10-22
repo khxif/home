@@ -1,17 +1,18 @@
-import { z } from "zod";
-import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Header from "../components/Header/Header";
-import HomeIcon from "/HomeIcon.svg";
-import PhoneIcon from "/PhoneIcon.svg";
-import MailIcon from "/MailIcon.svg";
-import FacebookIcon from "/FacebookIcon.svg";
-import TwitterIcon from "/TwitterIcon.svg";
-import GoogleIcon from "/GoogleIcon.svg";
-import InstagramIcon from "/InstagramIcon.svg";
-import YoutubeIcon from "/YoutubeIcon.svg";
+import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import { z } from "zod";
 import MapView from "../components/Contact/MapView";
+import Footer from '../components/Footer/Footer';
+import Header from "../components/Header/Header";
+import FacebookIcon from "/FacebookIcon.svg";
+import GoogleIcon from "/GoogleIcon.svg";
+import HomeIcon from "/HomeIcon.svg";
+import InstagramIcon from "/InstagramIcon.svg";
+import MailIcon from "/MailIcon.svg";
+import PhoneIcon from "/PhoneIcon.svg";
+import TwitterIcon from "/TwitterIcon.svg";
+import YoutubeIcon from "/YoutubeIcon.svg";
 
 export default function Contact() {
   const formSchema = z.object({
@@ -206,6 +207,7 @@ export default function Contact() {
           <MapView />
         </section>
       </main>
+      <Footer />
     </>
   );
 }

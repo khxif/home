@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html,body{
+html,
+body {
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -17,14 +18,14 @@ html,body{
   }
   .orange-btn {
     @apply btn btn-wide mt-10 rounded-full border-0 bg-[#E9672B] text-white 
-    transition-all duration-200 ease-in-out hover:bg-[#E9672B] hover:brightness-90
+    transition-all duration-200 ease-in-out hover:bg-[#E9672B] hover:brightness-90;
   }
   .livingroom-bg {
-    background-image: url('/livingroombg.png');
-    @apply w-full h-full object-center bg-no-repeat
+    background-image: url("/livingroombg.png");
+    @apply h-full w-full bg-no-repeat object-center;
   }
 
-  .slider::-webkit-slider-thumb{
+  .slider::-webkit-slider-thumb {
     background: orange;
   }
 }

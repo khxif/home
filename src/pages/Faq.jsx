@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { faqs } from "../utils/constants";
 
@@ -45,6 +46,7 @@ export default function Faq() {
           </Link>
         </div>
       </main>
+      <Footer />
     </>
   );
 }

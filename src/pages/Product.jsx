@@ -1,17 +1,18 @@
-import { useParams } from "react-router-dom";
-import Header from "../components/Header/Header";
-import Specifications from "../components/Products/Specifications";
-import Reviews from "../components/Products/Reviews";
-import ColorSelector from "../components/Home/ColorSelector";
-import ReactStars from "react-rating-stars-component";
-import BreadCrumbs from "../components/Products/BreadCrumbs";
-import { useState } from "react";
-import { twMerge } from "tailwind-merge";
-import TabButtons from "../components/Products/TabButtons";
-import Quantity from "../components/Products/Quantity";
 import { Heart } from "lucide-react";
+import { useState } from "react";
+import ReactStars from "react-rating-stars-component";
+import { useParams } from "react-router-dom";
+import { twMerge } from "tailwind-merge";
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
+import ColorSelector from "../components/Home/ColorSelector";
+import BreadCrumbs from "../components/Products/BreadCrumbs";
 import Description from "../components/Products/Description";
+import Quantity from "../components/Products/Quantity";
 import RelatedProducts from "../components/Products/RelatedProducts";
+import Reviews from "../components/Products/Reviews";
+import Specifications from "../components/Products/Specifications";
+import TabButtons from "../components/Products/TabButtons";
 
 export default function Product() {
   const params = useParams();
@@ -229,6 +230,7 @@ export default function Product() {
         </section>
       </main>
       <RelatedProducts />
+      <Footer />
     </>
   );
 }

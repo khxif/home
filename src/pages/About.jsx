@@ -1,11 +1,11 @@
+import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { logos } from "../utils/constants";
 import AboutImage1 from "/AboutImage1.png";
 import AboutImage2 from "/AboutImage2.png";
 import AboutImage3 from "/AboutImage3.png";
 import AirplaneOutlined from "/AirplaneOutlined.svg";
-import DollarOutlined from "/DollarOutlined.svg";
-import PhoneOutlined from "/DollarOutlined.svg";
+import { default as DollarOutlined, default as PhoneOutlined } from "/DollarOutlined.svg";
 import GiftOutlined from "/GiftOutlined.svg";
 
 export default function About() {
@@ -132,6 +132,7 @@ export default function About() {
           ))}
         </section>
       </main>
+      <Footer />
     </>
   );
 }

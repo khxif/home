@@ -1,12 +1,12 @@
-import { Search } from "lucide-react";
-import Logo from "/logo.png";
-import NavLinks from "./NavLinks";
-import NavItems from "./NavItems";
-import Sidebar from "../Sidebar/Sidebar";
-import { useState } from "react";
 import { useUser } from "@clerk/clerk-react";
-import { toast } from "sonner";
+import { Search } from "lucide-react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { toast } from "sonner";
+import Sidebar from "../Sidebar/Sidebar";
+import NavItems from "./NavItems";
+import NavLinks from "./NavLinks";
+import Logo from "/logo.png";
 
 export default function NavBar() {
   const [input, setInput] = useState("");

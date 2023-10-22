@@ -1,10 +1,10 @@
-import { Heart, Search, ShoppingCart, User } from "lucide-react";
-import { routes } from "../../utils/constants";
-import { Link, useLocation } from "react-router-dom";
-import { twJoin } from "tailwind-merge";
 import { UserButton, useUser } from "@clerk/clerk-react";
+import { Heart, Search, ShoppingCart, User } from "lucide-react";
 import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { toast } from "sonner";
+import { twJoin } from "tailwind-merge";
+import { routes } from "../../utils/constants";
 
 export default function SidebarContent() {
   const location = useLocation();

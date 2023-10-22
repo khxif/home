@@ -1,16 +1,16 @@
 import { ClerkProvider, SignIn, SignUp } from "@clerk/clerk-react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import Home from "../../pages/Home";
-import Shop from "../../pages/Shop";
-import Contact from "../../pages/Contact";
-import Blog from "../../pages/Blog";
 import About from "../../pages/About";
-import Sales from "../../pages/Sales";
-import Favorites from "../../pages/Favorites";
+import Blog from "../../pages/Blog";
 import Cart from "../../pages/Cart";
+import Contact from "../../pages/Contact";
 import Faq from "../../pages/Faq";
+import Favorites from "../../pages/Favorites";
+import Home from "../../pages/Home";
 import NotFound from "../../pages/NotFound";
 import Product from "../../pages/Product";
+import Sales from "../../pages/Sales";
+import Shop from "../../pages/Shop";
 
 if (!import.meta.env.VITE_REACT_APP_CLERK_PUBLISHABLE_KEY) {
   throw new Error("Missing Publishable Key");

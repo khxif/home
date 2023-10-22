@@ -1,13 +1,13 @@
-import { Link } from "react-router-dom";
-import HomeHeader from "../components/Header/HomeHeader";
-import HomeFooter from "../components/Footer/HomeFooter";
-import Hero from "../components/Home/Hero";
-import ProductCard from "../components/Home/ProductCard";
-import { logos, productCategories } from "../utils/constants";
-import { twMerge } from "tailwind-merge";
 import { useState } from "react";
-import ProductsGrid from "../components/Home/ProductsGrid";
+import { Link } from "react-router-dom";
+import { twMerge } from "tailwind-merge";
+import HomeFooter from "../components/Footer/HomeFooter";
+import HomeHeader from "../components/Header/HomeHeader";
+import Hero from "../components/Home/Hero";
 import HomeCategories from "../components/Home/HomeCategories";
+import ProductCard from "../components/Home/ProductCard";
+import ProductsGrid from "../components/Home/ProductsGrid";
+import { logos, productCategories } from "../utils/constants";
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");

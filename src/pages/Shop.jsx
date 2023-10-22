@@ -1,9 +1,13 @@
-import Select from "react-select";
-import Header from "../components/Header/Header";
-import ShopHero from "../components/Shop/ShopHero";
+import { LayoutGrid, Rows } from "lucide-react";
 import { useEffect, useState } from "react";
-import ProductsGrid from "../components/Shop/ProductsGrid";
 import ReactPaginate from "react-paginate";
+import Select from "react-select";
+import { twMerge } from "tailwind-merge";
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
+import ProductRow from "../components/Shop/ProductRow";
+import ProductsGrid from "../components/Shop/ProductsGrid";
+import ShopHero from "../components/Shop/ShopHero";
 import ShopSidebar from "../components/Shop/ShopSidebar";
 
 const options = [
@@ -16,6 +20,7 @@ export default function Shop() {
   const [categoriesCheckedBox, setCategoriesCheckBox] = useState("");
   const [typesCheckedBox, setTypesCheckBox] = useState("");
   const [filters, setFilters] = useState([]);
+  const [mode, setMode] = useState("grid");
 
   const handleCategoriesCheckBox = (checkBoxName) => {
     if (categoriesCheckedBox === checkBoxName) setCategoriesCheckBox("");
@@ -74,13 +79,26 @@ export default function Shop() {
                   defaultValue={selectedOption}
                 />
               </div>
-              {/* <div className="md:hidden">
-              <SlidersHorizontal  />
-              </div> */}
+              <div className="flex items-center space-x-4">
+                <LayoutGrid
+                  onClick={() => setMode("grid")}
+                  className={twMerge(
+                    "h-5 w-5 cursor-pointer",
+                    mode === "grid" && "text-[#DE5212]",
+                  )}
+                />
+                <Rows
+                  onClick={() => setMode("row")}
+                  className={twMerge(
+                    "h-5 w-5 cursor-pointer",
+                    mode === "row" && "text-[#DE5212]",
+                  )}
+                />
+              </div>
             </div>
 
             <div className="py-4">
-              <ProductsGrid />
+              {mode == "grid" ? <ProductsGrid /> : <ProductRow />}
             </div>
             <div className="flex w-full items-center justify-center">
               <ReactPaginate
@@ -99,6 +117,7 @@ export default function Shop() {
           </section>
         </section>
       </main>
+      <Footer />
     </>
   );
 }
