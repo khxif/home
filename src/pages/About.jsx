@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { logos } from "../utils/constants";
@@ -5,14 +6,22 @@ import AboutImage1 from "/AboutImage1.png";
 import AboutImage2 from "/AboutImage2.png";
 import AboutImage3 from "/AboutImage3.png";
 import AirplaneOutlined from "/AirplaneOutlined.svg";
-import { default as DollarOutlined, default as PhoneOutlined } from "/DollarOutlined.svg";
+import {
+  default as DollarOutlined,
+  default as PhoneOutlined,
+} from "/DollarOutlined.svg";
 import GiftOutlined from "/GiftOutlined.svg";
 
 export default function About() {
   return (
     <>
       <Header />
-      <main className="py2 mx-auto max-w-7xl px-4 md:px-0 md:py-4">
+      <motion.main
+        initial={{ y: "100%" }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.75 }}
+        className="py2 mx-auto max-w-7xl px-4 md:px-0 md:py-4"
+      >
         <section className="flex flex-col-reverse md:flex-row md:space-x-20">
           <div className="my-8 md:my-0">
             <img src={AboutImage1} alt="Image" />
@@ -20,7 +29,7 @@ export default function About() {
 
           <div className="text-center md:py-8 md:text-start">
             <h4 className="text-base text-[#E9672B]">ABOUT US</h4>
-            <h1 className="my-1 text-2xl md:text-3xl font-bold leading-10 md:w-96">
+            <h1 className="my-1 text-2xl font-bold leading-10 md:w-96 md:text-3xl">
               Just Stay Home & Enjoy Your Shopping Time
             </h1>
             <div className="my-3 space-y-4 text-sm md:w-[570px]">
@@ -80,7 +89,7 @@ export default function About() {
         </section>
 
         <section className="mx-auto flex max-w-7xl flex-col items-center justify-center space-y-3 py-4 md:w-[478px]">
-          <h1 className="text-center text-2xl md:text-3xl font-bold leading-10">
+          <h1 className="text-center text-2xl font-bold leading-10 md:text-3xl">
             Makes Everything So Much Eastier It’s Even More With Melor
           </h1>
           <p className="text-center text-sm text-[#5D5F5F] md:w-[570px]">
@@ -124,14 +133,14 @@ export default function About() {
           </p>
         </section>
 
-        <section className="scrollbar-hide flex items-center overflow-y-scroll py-8 md:space-x-4">
+        <section className="flex items-center overflow-y-scroll py-8 scrollbar-hide md:space-x-4">
           {logos.map((src) => (
             <div key={src.id}>
               <img src={src.src} alt="logos" />
             </div>
           ))}
         </section>
-      </main>
+      </motion.main>
       <Footer />
     </>
   );

@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 export default function Slider() {
@@ -14,9 +15,14 @@ export default function Slider() {
           <p className="text-sm font-medium uppercase text-[#CDD454]">
             Make real with wood
           </p>
-          <h1 className="text-2xl font-bold text-white md:w-[350px] md:text-4xl md:leading-[64px]">
+          <motion.h1
+            animate={{ y: 0 }}
+            initial={{ y: "100%" }}
+            transition={{ duration: 0.75 }}
+            className="text-2xl font-bold text-white md:w-[350px] md:text-4xl md:leading-[64px]"
+          >
             Greate Design Affordable Prices
-          </h1>
+          </motion.h1>
           <p className="text-base font-normal text-white md:text-lg">
             We design your home more beautiful
           </p>
