@@ -2,7 +2,7 @@ import { Suspense, lazy, useState } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
 
-const OtherProducts = lazy(() => import('../components/Cart/OtherProducts'))
+const OtherProducts = lazy(() => import("../components/Cart/OtherProducts"));
 const Header = lazy(() => import("../components/Header/Header"));
 
 export default function Cart() {
@@ -12,7 +12,7 @@ export default function Cart() {
     <Suspense fallback={<Loading />}>
       <Header />
       {cartItems.length === 0 && (
-        <div className="my-4 flex w-full flex-col items-center justify-center space-y-6 py-6">
+        <div className="my-4 h-full flex w-full flex-col items-center justify-center space-y-6 py-6">
           <img src="/Cart.png" alt="shopping-cart" />
           <p className="text-2xl font-semibold">Your shopping cart is empty</p>
           <Link to="/">
@@ -25,8 +25,8 @@ export default function Cart() {
           </Link>
         </div>
       )}
-      <div className="max-w-7xl mx-auto bg-white">
-      <OtherProducts />
+      <div className="mx-auto max-w-7xl bg-white">
+        <OtherProducts />
       </div>
     </Suspense>
   );
