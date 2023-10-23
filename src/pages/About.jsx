@@ -17,8 +17,8 @@ export default function About() {
     <>
       <Header />
       <motion.main
-        initial={{ y: "100%" }}
-        animate={{ y: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 0.75 }}
         className="py2 mx-auto max-w-7xl px-4 md:px-0 md:py-4"
       >
