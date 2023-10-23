@@ -1,11 +1,14 @@
+import { Suspense, lazy } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
+import Loading from "../components/Loading";
 import { faqs } from "../utils/constants";
+
+const Footer = lazy(() => import("../components/Footer/Footer"));
+const Header = lazy(() => import("../components/Header/Header"));
 
 export default function Faq() {
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Header />
       <main className="mx-auto max-w-7xl px-4 py-2 text-3xl md:px-0 md:py-6">
         <h1 className="font-bold ">How Can We Help You?</h1>
@@ -47,6 +50,6 @@ export default function Faq() {
         </div>
       </main>
       <Footer />
-    </>
+    </Suspense>
   );
 }

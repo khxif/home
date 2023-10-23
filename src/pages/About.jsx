@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
+import { Suspense, lazy } from "react";
+import Loading from "../components/Loading";
 import { logos } from "../utils/constants";
 import AboutImage1 from "/AboutImage1.png";
 import AboutImage2 from "/AboutImage2.png";
@@ -12,9 +12,12 @@ import {
 } from "/DollarOutlined.svg";
 import GiftOutlined from "/GiftOutlined.svg";
 
+const Footer = lazy(() => import("../components/Footer/Footer"));
+const Header = lazy(() => import("../components/Header/Header"));
+
 export default function About() {
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Header />
       <motion.main
         initial={{ opacity: 0 }}
@@ -49,7 +52,7 @@ export default function About() {
 
             <div className="grid grid-cols-2 justify-between space-y-5 md:py-3">
               <span className="flex items-center space-x-2">
-                <img src={AirplaneOutlined} />
+                <img loading="lazy" src={AirplaneOutlined} />
                 <span>
                   <h4 className="text-sm font-normal">Free World Delivery</h4>
                   <p className="text-sm font-normal text-[#5D5F5F]">
@@ -58,7 +61,7 @@ export default function About() {
                 </span>
               </span>
               <span className="flex items-center space-x-2">
-                <img src={DollarOutlined} />
+                <img loading="lazy" src={DollarOutlined} />
                 <span>
                   <h4 className="text-sm font-normal">Money Back Guarantee</h4>
                   <p className="text-sm font-normal text-[#5D5F5F]">
@@ -67,7 +70,7 @@ export default function About() {
                 </span>
               </span>
               <span className="flex items-center space-x-2">
-                <img src={PhoneOutlined} />
+                <img loading="lazy" src={PhoneOutlined} />
                 <span>
                   <h4 className="text-sm font-normal">Online Support</h4>
                   <p className="text-sm font-normal text-[#5D5F5F]">
@@ -76,7 +79,7 @@ export default function About() {
                 </span>
               </span>
               <span className="flex items-center space-x-2">
-                <img src={GiftOutlined} />
+                <img loading="lazy" src={GiftOutlined} />
                 <span>
                   <h4 className="text-sm font-normal">Member Gift</h4>
                   <p className="text-sm font-normal text-[#5D5F5F]">
@@ -101,10 +104,10 @@ export default function About() {
 
         <section className="flex w-full justify-around space-x-4 px-4 md:px-10 md:py-10">
           <div>
-            <img src={AboutImage2} alt="About Image" />
+            <img src={AboutImage2} loading="lazy" alt="About Image" />
           </div>
           <div className="flex items-center">
-            <img src={AboutImage3} alt="About Image" />
+            <img src={AboutImage3} loading="lazy" alt="About Image" />
           </div>
         </section>
 
@@ -142,6 +145,6 @@ export default function About() {
         </section>
       </motion.main>
       <Footer />
-    </>
+    </Suspense>
   );
 }

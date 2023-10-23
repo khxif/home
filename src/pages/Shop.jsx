@@ -1,14 +1,16 @@
 import { LayoutGrid, Rows } from "lucide-react";
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import ReactPaginate from "react-paginate";
 import Select from "react-select";
 import { twMerge } from "tailwind-merge";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
-import ProductRow from "../components/Shop/ProductRow";
-import ProductsGrid from "../components/Shop/ProductsGrid";
-import ShopHero from "../components/Shop/ShopHero";
-import ShopSidebar from "../components/Shop/ShopSidebar";
+import Loading from "../components/Loading";
+
+const ShopSidebar = lazy(() => import("../components/Shop/ShopSidebar"));
+const ShopHero = lazy(() => import("../components/Shop/ShopHero"));
+const ProductsGrid = lazy(() => import("../components/Shop/ProductsGrid"));
+const ProductRow = lazy(() => import("../components/Shop/ProductRow"));
+const Footer = lazy(() => import("../components/Footer/Footer"));
+const Header = lazy(() => import("../components/Header/Header"));
 
 const options = [
   { value: "low to high", label: "Price(low to high)" },
@@ -44,7 +46,7 @@ export default function Shop() {
   }, [categoriesCheckedBox, typesCheckedBox]);
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Header />
       <main className="h-full">
         <ShopHero />
@@ -118,6 +120,6 @@ export default function Shop() {
         </section>
       </main>
       <Footer />
-    </>
+    </Suspense>
   );
 }

@@ -1,10 +1,13 @@
-import Header from "../components/Header/Header";
+import { Suspense, lazy } from "react";
+import Loading from "../components/Loading";
+
+const Header = lazy(() => import("../components/Header/Header"));
 
 export default function Favorites() {
   return (
-    <div>
+    <Suspense fallback={<Loading />}>
       <Header />
       Favorites
-    </div>
+    </Suspense>
   );
 }

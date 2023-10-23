@@ -1,18 +1,25 @@
 import { Heart } from "lucide-react";
-import { useState } from "react";
+import { Suspense, lazy, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { useParams } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
-import ColorSelector from "../components/Home/ColorSelector";
-import BreadCrumbs from "../components/Products/BreadCrumbs";
-import Description from "../components/Products/Description";
-import Quantity from "../components/Products/Quantity";
-import RelatedProducts from "../components/Products/RelatedProducts";
-import Reviews from "../components/Products/Reviews";
-import Specifications from "../components/Products/Specifications";
-import TabButtons from "../components/Products/TabButtons";
+import Loading from "../components/Loading";
+
+const Footer = lazy(() => import("../components/Footer/Footer"));
+const Header = lazy(() => import("../components/Header/Header"));
+const ColorSelector = lazy(() => import("../components/Home/ColorSelector"));
+const Description = lazy(() => import("../components/Products/Description"));
+const Quantity = lazy(() => import("../components/Products/Quantity"));
+const BreadCrumbs = lazy(() => import("../components/Products/BreadCrumbs"));
+const RelatedProducts = lazy(() =>
+  import("../components/Products/RelatedProducts"),
+);
+const Reviews = lazy(() => import("../components/Products/Reviews"));
+const Specifications = lazy(() =>
+  import("../components/Products/Specifications"),
+);
+const TabButtons = lazy(() => import("../components/Products/TabButtons"));
+
 
 export default function Product() {
   const params = useParams();
@@ -32,7 +39,7 @@ export default function Product() {
   const [category, setCategory] = useState("Description");
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Header />
       <BreadCrumbs />
       <main className="mx-auto my-4 max-w-7xl px-4 md:px-0">
@@ -231,6 +238,6 @@ export default function Product() {
       </main>
       <RelatedProducts />
       <Footer />
-    </>
+    </Suspense>
   );
 }

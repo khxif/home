@@ -1,19 +1,22 @@
-import { useState } from "react";
+import { lazy, useState } from "react";
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
-import HomeFooter from "../components/Footer/HomeFooter";
-import HomeHeader from "../components/Header/HomeHeader";
-import Hero from "../components/Home/Hero";
-import HomeCategories from "../components/Home/HomeCategories";
-import ProductCard from "../components/Home/ProductCard";
-import ProductsGrid from "../components/Home/ProductsGrid";
 import { logos, productCategories } from "../utils/constants";
+import { Suspense } from "react";
+import Loading from "../components/Loading";
+
+const ProductsGrid = lazy(() => import("../components/Home/ProductsGrid"));
+const ProductCard = lazy(() => import("../components/Home/ProductCard"));
+const HomeCategories = lazy(() => import("../components/Home/HomeCategories"));
+const HomeHeader = lazy(() => import("../components/Header/HomeHeader"));
+const Hero = lazy(() => import("../components/Home/Hero"));
+const HomeFooter = lazy(() => import("../components/Footer/HomeFooter"));
 
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const offer = true;
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <HomeHeader />
       <main className="mx-auto max-w-7xl px-2 md:px-0">
         <Hero />
@@ -116,7 +119,7 @@ export default function Home() {
             <img
               src="/lamp5.png"
               alt="product"
-              className="absolute -left-14 w-48 object-contain sm:-left-6 md:w-96 md:static"
+              className="absolute -left-14 w-48 object-contain sm:-left-6 md:static md:w-96"
             />
             <div className="z-30 mx-auto">
               <h4 className="text-sm uppercase text-[#E9672B] md:text-base">
@@ -132,7 +135,7 @@ export default function Home() {
             <img
               src="lamp2.png"
               alt="product"
-              className="absolute -right-28 w-56 object-contain sm:-right-12  md:w-auto md:static"
+              className="absolute -right-28 w-56 object-contain sm:-right-12  md:static md:w-auto"
             />
           </div>
 
@@ -143,14 +146,14 @@ export default function Home() {
             <img
               src="/lamp5.png"
               alt="product"
-              className="absolute -left-14 w-48 object-contain sm:-left-6 md:w-96 md:static"
+              className="absolute -left-14 w-48 object-contain sm:-left-6 md:static md:w-96"
             />
             <div className="z-30 mx-auto">
               <h4 className="text-sm uppercase text-[#E9672B] md:text-base">
                 2020’s NEW COLLECTION
               </h4>
               <h1 className="text-2xl font-bold sm:text-3xl md:text-4xl">
-              Vega Table Lamp
+                Vega Table Lamp
               </h1>
               <Link to="/">
                 <button className="orange-btn mt-6">Explore Now</button>
@@ -159,7 +162,7 @@ export default function Home() {
             <img
               src="lamp2.png"
               alt="product"
-              className="absolute -right-28 w-56 object-contain sm:-right-12  md:w-auto md:static"
+              className="absolute -right-28 w-56 object-contain sm:-right-12  md:static md:w-auto"
             />
           </div>
         </section>
@@ -219,11 +222,11 @@ export default function Home() {
             <a href="#">Follow us on instagram</a>
           </h4>
           <div className="flex items-center justify-center gap-3 overflow-x-scroll py-4 scrollbar-hide">
-            <img src="/AboutImage1.png" className="h-64 w-64" />
-            <img src="/AboutImage2.png" className="h-64 w-64" />
-            <img src="/AboutImage3.png" className="h-64 w-64" />
-            <img src="/AboutImage2.png" className="h-64 w-64" />
-            <img src="/AboutImage3.png" className="h-64 w-64" />
+            <img loading="lazy" src="/AboutImage1.png" className="h-64 w-64" />
+            <img loading="lazy" src="/AboutImage2.png" className="h-64 w-64" />
+            <img loading="lazy" src="/AboutImage3.png" className="h-64 w-64" />
+            <img loading="lazy" src="/AboutImage2.png" className="h-64 w-64" />
+            <img loading="lazy" src="/AboutImage3.png" className="h-64 w-64" />
           </div>
           <div className="flex items-center overflow-y-scroll py-8 scrollbar-hide md:space-x-4">
             {logos.map((src) => (
@@ -235,6 +238,6 @@ export default function Home() {
         </section>
       </main>
       <HomeFooter />
-    </>
+    </Suspense>
   );
 }

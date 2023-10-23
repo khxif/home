@@ -1,10 +1,9 @@
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Suspense, lazy } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
-import MapView from "../components/Contact/MapView";
-import Footer from '../components/Footer/Footer';
-import Header from "../components/Header/Header";
+import Loading from "../components/Loading";
 import FacebookIcon from "/FacebookIcon.svg";
 import GoogleIcon from "/GoogleIcon.svg";
 import HomeIcon from "/HomeIcon.svg";
@@ -13,6 +12,10 @@ import MailIcon from "/MailIcon.svg";
 import PhoneIcon from "/PhoneIcon.svg";
 import TwitterIcon from "/TwitterIcon.svg";
 import YoutubeIcon from "/YoutubeIcon.svg";
+
+const Footer = lazy(() => import("../components/Footer/Footer"));
+const Header = lazy(() => import("../components/Header/Header"));
+const MapView = lazy(() => import("../components/Contact/MapView"));
 
 export default function Contact() {
   const formSchema = z.object({
@@ -44,10 +47,10 @@ export default function Contact() {
   };
 
   return (
-    <>
+    <Suspense fallback={<Loading />}>
       <Header />
-      <main className="mx-auto max-w-7xl px-6 py-4 md:py-6 md:px-0">
-        <section className="flex flex-col justify-center md:space-x-32 md:flex-row md:justify-between">
+      <main className="mx-auto max-w-7xl px-6 py-4 md:px-0 md:py-6">
+        <section className="flex flex-col justify-center md:flex-row md:justify-between md:space-x-32">
           <div>
             <div>
               <h1 className="text-2xl font-bold leading-10 md:text-3xl">
@@ -63,8 +66,7 @@ export default function Contact() {
               onSubmit={handleSubmit(onSubmit)}
               className="flex flex-col  space-y-4 py-4"
             >
-              <div className="grid grid-cols-1 gap-x-4 sm:gap-x-6 gap-y-4 md:grid-cols-2">
-
+              <div className="grid grid-cols-1 gap-x-4 gap-y-4 sm:gap-x-6 md:grid-cols-2">
                 <div className="flex flex-col">
                   <span className="flex items-center justify-between">
                     <label className="label">Your Name</label>
@@ -79,8 +81,8 @@ export default function Contact() {
                     placeholder="ex: Julie Sample "
                     {...register("name")}
                     disabled={isSubmitting}
-                    className="input-sm py-4 sm:py-6 rounded-full border border-gray-400 disabled:input-disabled 
-                   sm:input-md"
+                    className="input-sm rounded-full border border-gray-400 py-4 disabled:input-disabled sm:input-md 
+                   sm:py-6"
                   />
                 </div>
                 <div className="flex flex-col">
@@ -97,7 +99,7 @@ export default function Contact() {
                     placeholder="ex: julie@gmail.com"
                     {...register("email")}
                     disabled={isSubmitting}
-                    className="input-sm py-4 sm:py-6 rounded-full border border-gray-400 sm:input-md"
+                    className="input-sm rounded-full border border-gray-400 py-4 sm:input-md sm:py-6"
                   />
                 </div>
                 <div className="flex flex-col">
@@ -114,7 +116,7 @@ export default function Contact() {
                     {...register("phone")}
                     placeholder="ex: +1 234 455 5564"
                     disabled={isSubmitting}
-                    className="input-sm py-4 sm:py-6 rounded-full border border-gray-400 sm:input-md"
+                    className="input-sm rounded-full border border-gray-400 py-4 sm:input-md sm:py-6"
                   />
                 </div>
                 <div className="flex flex-col">
@@ -131,7 +133,7 @@ export default function Contact() {
                     placeholder="ex: return"
                     {...register("subject")}
                     disabled={isSubmitting}
-                    className="input-sm py-4 sm:py-6 rounded-full border border-gray-400 sm:input-md"
+                    className="input-sm rounded-full border border-gray-400 py-4 sm:input-md sm:py-6"
                   />
                 </div>
                 <div className="col-span-2 row-span-2 w-full">
@@ -170,19 +172,19 @@ export default function Contact() {
             </p>
             <div className="space-y-4 py-3">
               <span className="flex items-center space-x-1">
-                <img src={HomeIcon} />
+                <img loading="lazy" src={HomeIcon} />
                 <p className="text-sm font-normal text-[#5D5F5F]">
                   17 Princess Road, London, Greater London NW1 8JR, UK
                 </p>
               </span>
               <span className="flex items-center space-x-1">
-                <img src={PhoneIcon} />
+                <img loading="lazy" src={PhoneIcon} />
                 <p className="text-sm font-normal text-[#5D5F5F]">
                   (800) 8001-8588, (0600) 874 548
                 </p>
               </span>
               <span className="flex items-center space-x-1">
-                <img src={MailIcon} />
+                <img loading="lazy" src={MailIcon} />
                 <p className="text-sm font-normal text-[#5D5F5F]">
                   (800) 8001-8588, (0600) 874 548
                 </p>
@@ -194,11 +196,11 @@ export default function Contact() {
               and offer problems by phone, email, Instagram or Facebook.
             </p>
             <span className="flex w-full space-x-3 py-2">
-              <img src={FacebookIcon} />
-              <img src={GoogleIcon} />
-              <img src={InstagramIcon} />
-              <img src={TwitterIcon} />
-              <img src={YoutubeIcon} />
+              <img loading="lazy" src={FacebookIcon} />
+              <img loading="lazy" src={GoogleIcon} />
+              <img loading="lazy" src={InstagramIcon} />
+              <img loading="lazy" src={TwitterIcon} />
+              <img loading="lazy" src={YoutubeIcon} />
             </span>
           </div>
         </section>
@@ -208,6 +210,6 @@ export default function Contact() {
         </section>
       </main>
       <Footer />
-    </>
+    </Suspense>
   );
 }
