@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import { toast } from "sonner";
 
 export default function Sales() {
@@ -24,7 +25,10 @@ export default function Sales() {
           <img src="/logo-light.png" alt="logo" />
         </Link>
       </header>
-      <main
+      <motion.main
+        initial={{ scale: 0.4 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5 }}
         className="mx-auto my-auto flex h-4/5 max-w-2xl flex-col items-center justify-center space-y-3 px-4 
       text-center text-white sm:px-6 md:px-0 md:text-start"
       >
@@ -81,7 +85,7 @@ export default function Sales() {
             Subscribe
           </button>
         </form>
-      </main>
+      </motion.main>
       <footer className="absolute bottom-0 w-full bg-[#F4F4F5] py-6">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 md:px-0">
           <p>Copyright © All rights Reserved</p>

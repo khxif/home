@@ -28,4 +28,16 @@ body {
   .slider::-webkit-slider-thumb {
     background: orange;
   }
+
+  ::-webkit-scrollbar {
+    @apply h-10 w-1;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply w-full rounded-full bg-[#e9672b];
+  }
 }
