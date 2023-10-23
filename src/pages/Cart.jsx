@@ -2,6 +2,7 @@ import { Suspense, lazy, useState } from "react";
 import { Link } from "react-router-dom";
 import Loading from "../components/Loading";
 
+const OtherProducts = lazy(() => import('../components/Cart/OtherProducts'))
 const Header = lazy(() => import("../components/Header/Header"));
 
 export default function Cart() {
@@ -24,6 +25,9 @@ export default function Cart() {
           </Link>
         </div>
       )}
+      <div className="max-w-7xl mx-auto bg-white">
+      <OtherProducts />
+      </div>
     </Suspense>
   );
 }
