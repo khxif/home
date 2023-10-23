@@ -4,11 +4,11 @@ import ReactPaginate from "react-paginate";
 import Select from "react-select";
 import { twMerge } from "tailwind-merge";
 import Loading from "../components/Loading";
+import ProductRow from "../components/Shop/ProductRow";
+import ProductsGrid from "../components/Shop/ProductsGrid";
 
 const ShopSidebar = lazy(() => import("../components/Shop/ShopSidebar"));
 const ShopHero = lazy(() => import("../components/Shop/ShopHero"));
-const ProductsGrid = lazy(() => import("../components/Shop/ProductsGrid"));
-const ProductRow = lazy(() => import("../components/Shop/ProductRow"));
 const Footer = lazy(() => import("../components/Footer/Footer"));
 const Header = lazy(() => import("../components/Header/Header"));
 
