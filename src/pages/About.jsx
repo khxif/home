@@ -11,6 +11,7 @@ import {
   default as PhoneOutlined,
 } from "/DollarOutlined.svg";
 import GiftOutlined from "/GiftOutlined.svg";
+import Marquee from "react-fast-marquee";
 
 const Footer = lazy(() => import("../components/Footer/Footer"));
 const Header = lazy(() => import("../components/Header/Header"));
@@ -136,13 +137,13 @@ export default function About() {
           </p>
         </section>
 
-        <section className="flex items-center overflow-y-scroll py-8 scrollbar-hide md:space-x-4">
+        <Marquee className="flex items-center overflow-y-scroll py-8 scrollbar-hide md:space-x-4">
           {logos.map((src) => (
             <div key={src.id}>
               <img src={src.src} alt="logos" />
             </div>
           ))}
-        </section>
+        </Marquee>
       </motion.main>
       <Footer />
     </Suspense>
