@@ -1,10 +1,9 @@
-import { lazy, useState } from "react";
+import { Suspense, lazy, useState } from "react";
+import Marquee from "react-fast-marquee";
 import { Link } from "react-router-dom";
 import { twMerge } from "tailwind-merge";
-import { logos, productCategories } from "../utils/constants";
-import { Suspense } from "react";
 import Loading from "../components/Loading";
-import Marquee from "react-fast-marquee";
+import { logos, productCategories } from "../utils/constants";
 
 const ProductsGrid = lazy(() => import("../components/Home/ProductsGrid"));
 const ProductCard = lazy(() => import("../components/Home/ProductCard"));
@@ -222,7 +221,7 @@ export default function Home() {
           <h4 className="border-gray-400 py-3 text-center text-lg underline">
             <a href="#">Follow us on instagram</a>
           </h4>
-          <div className="flex items-center justify-center gap-3 w-full overflow-x-scroll py-4 scrollbar-hide">
+          <div className="flex w-full items-center justify-center gap-3 overflow-x-scroll py-4 scrollbar-hide">
             <img loading="lazy" src="/AboutImage1.png" className="h-64 w-64" />
             <img loading="lazy" src="/AboutImage2.png" className="h-64 w-64" />
             <img loading="lazy" src="/AboutImage3.png" className="h-64 w-64" />
