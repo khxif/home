@@ -174,18 +174,19 @@ export default function Home() {
 
           <div className="w-full space-x-4 overflow-x-scroll py-4 scrollbar-hide">
             {productCategories.map((category) => (
-              <button
-                key={category}
-                className={twMerge(
-                  "rounded-full px-6 py-2 text-xs transition-all duration-200 md:text-sm ",
-                  selectedCategory === category
-                    ? "bg-[#E9672B] font-semibold  text-white"
-                    : "bg-[#FBF8F5] text-[#E9672B] hover:brightness-110",
-                )}
-                onClick={() => setSelectedCategory(category)}
-              >
-                {category}
-              </button>
+              <Link key={category} to="#">
+                <span
+                  className={twMerge(
+                    "rounded-full px-6 py-2 text-xs transition-all duration-200 md:text-sm ",
+                    selectedCategory === category
+                      ? "bg-[#E9672B] font-semibold  text-white"
+                      : "bg-[#FBF8F5] text-[#E9672B] hover:brightness-110",
+                  )}
+                  onClick={() => setSelectedCategory(category)}
+                >
+                  {category}
+                </span>
+              </Link>
             ))}
           </div>
           <ProductsGrid />
